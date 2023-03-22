@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learderboard</title>
+<script defer src="main.js"></script></head>
+<body>
+  <header>
+    <h1 class="main-title">
+      <span>L</span>
+      <span>E</span>
+      <span>A</span>
+      <span>D</span>
+      <span>E</span>
+      <span>R</span>
+      <span>B</span>
+      <span>O</span>
+      <span>A</span>
+      <span>R</span>
+      <span>D</span>
+    </h1>
+  </header>
+  <main>
+    <div class="score-head">
+      <h2 class="score-title">Recent Scores</h2>
+      <button type="button" class="refresh" id="refresh-button">Refresh</button>
+      <h2 class="add-title">Add Your Score</h2>
+    </div>
+    <div class="score-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+        </tbody>
+      </table>
+      <form class="input-form">
+          <input type="text" id="name" name="name" placeholder="Your Name"><br><br>
+          <input type="number" id="score" name="score" placeholder="Your Score"><br><br>
+          <button class="submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

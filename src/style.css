@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+#food-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.food-item {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.food-item img {
+  max-width: 100%;
+}
+
+.food-item h2 {
+  margin-top: 0;
+}
