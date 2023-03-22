@@ -2,7 +2,7 @@ import './style.css';
 
 const main = document.querySelector('main');
 
-function complete(f) {
+const complete = (f) => {
   const ligne = document.createElement('div');
   ligne.classList.add('row');
   main.appendChild(ligne);
@@ -23,7 +23,7 @@ function complete(f) {
 
   `;
   }
-}
+};
 
 async function received() {
   const requestUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
@@ -34,6 +34,4 @@ async function received() {
   complete(data);
 }
 
-window.addEventListener('load', () => {
-  received();
-});
+window.addEventListener('load', received);
