@@ -1,25 +1,17 @@
-body {
-  font-family: sans-serif;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1 {
-  text-align: center;
+main {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
-#food-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+img {
+  height: 290px;
+  width: 250px;
 }
-
-.food-item {
-  width: 300px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
 .food-item img {
   max-width: 100%;
 }
