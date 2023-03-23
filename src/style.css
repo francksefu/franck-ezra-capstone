@@ -137,6 +137,15 @@ button {
 
 .btn-danger {
   background-color: #dc3545;
+  line-height: 12px;
+  width: 18px;
+  font-size: 8pt;
+  margin-top: 5px;
+  margin-right: 10px;
+  padding-left: 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 form {
@@ -165,18 +174,6 @@ form input:focus,
 form textarea:focus {
   outline: none;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-}
-
-.btn-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  font-size: 1.5rem;
-  color: #fff;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 0;
 }
 
 /* Footer  */

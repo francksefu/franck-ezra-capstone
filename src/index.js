@@ -54,7 +54,7 @@ window.openPopup = async function openPopup(id) {
         </form>
         <h3 id="comment-title">Comments: (0)</h3>
         <div id="comment-section"></div>
-        <button class="btn btn-danger" onclick="closePopup()">Close</button>
+        <button class="btn btn-danger" onclick="closePopup()">&times;</button>
       </div>
     </div>
   `;
