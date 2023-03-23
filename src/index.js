@@ -33,8 +33,7 @@ async function received() {
   complete(data);
 }
 
-
-window.openPopup = async function (id) {
+window.openPopup = async function openPopup(id) {
   const requestUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
   const request = new Request(requestUrl);
   const response = await fetch(request);
@@ -42,17 +41,11 @@ window.openPopup = async function (id) {
   const meal = mealDetails.meals[0];
 
   const response2 = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments?item_id=${id}`
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments?item_id=${id}`,
   );
-  
-  const comments = await response2.json();
-  if(comments.length === null ){
-    return 0;
-  }else {
-    comments.length;
-  }
 
-  
+  const comments = await response2.json();
+
   const popupHTML = `
     <div class="popup">
       <div class="popup-content">
@@ -67,31 +60,32 @@ window.openPopup = async function (id) {
         </form>
         <h3 id="comment-title">Comments: (${comments.length})</h3>
         <div id="comment-section"></div>
-        <button class="btn btn-danger" onclick="closePopup()">Close</button>
+        <button type="button" class="btn btn-danger pull-right" pull-left" onclick="closePopup()">&times;</button>
+        <hr>
       </div>
     </div>
   `;
 
   document.body.innerHTML += popupHTML;
 
-  const commentForm = document.getElementById("comment-form");
-  commentForm.addEventListener("submit", async function (event) {
+  const commentForm = document.getElementById('comment-form');
+  commentForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const username = document.getElementById("username").value;
-    const comment = document.getElementById("comment").value;
-    const data = { item_id: id, username: username, comment: comment };
+    const username = document.getElementById('username').value;
+    const comment = document.getElementById('comment').value;
+    const data = { item_id: id, username, comment };
     const response = await fetch(
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments",
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments',
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      }
+      },
     );
     const result = await response.json();
-    const commentSection = document.getElementById("comment-section");
+    const commentSection = document.getElementById('comment-section');
     const commentHTML = `
       <div>
         <p><b>${result.username}</b></p>
@@ -103,22 +97,17 @@ window.openPopup = async function (id) {
     commentForm.reset();
   });
 
-  
-  const commentSection = document.getElementById("comment-section");
-  const commentsHTML = comments.map((comment) => {
-    return `
+  const commentSection = document.getElementById('comment-section');
+  const commentsHTML = comments.map((comment) => `
     
       <div>
         <p>${comment.creation_date}: <b>${comment.username}</b></p>
         <p>${comment.comment}</p>
-      </div>`
-   
-  });
-  commentSection.innerHTML = commentsHTML.join("");
+      </div>`);
+  commentSection.innerHTML = commentsHTML.join('');
 };
 
-
-window.closePopup = function () {
+window.closePopup = function closePopup() {
   const popup = document.querySelector('.popup');
   popup.parentNode.removeChild(popup);
 };
