@@ -1,0 +1,22 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+img {
+  height: 290px;
+  width: 250px;
+}
+
+.food-item img {
+  max-width: 100%;
+}
+
+.food-item h2 {
+  margin-top: 0;
+}
