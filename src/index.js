@@ -51,6 +51,20 @@ window.openPopup = async function openPopup(id) {
       <div class="popup-content">
         <img src="${meal.strMealThumb}" class="popup-img" alt="${meal.strMeal}">
         <h2>${meal.strMeal}</h2>
+        <p>${meal.strInstructions}</p>
+        <h3>Ingredients:</h3>
+        <ul>
+          ${meal.strIngredient1 ? `<li>${meal.strIngredient1} - ${meal.strMeasure1}</li>` : ''}
+          ${meal.strIngredient2 ? `<li>${meal.strIngredient2} - ${meal.strMeasure2}</li>` : ''}
+          ${meal.strIngredient3 ? `<li>${meal.strIngredient3} - ${meal.strMeasure3}</li>` : ''}
+          ${meal.strIngredient4 ? `<li>${meal.strIngredient4} - ${meal.strMeasure4}</li>` : ''}
+          ${meal.strIngredient5 ? `<li>${meal.strIngredient5} - ${meal.strMeasure5}</li>` : ''}
+          ${meal.strIngredient6 ? `<li>${meal.strIngredient6} - ${meal.strMeasure6}</li>` : ''}
+          ${meal.strIngredient7 ? `<li>${meal.strIngredient7} - ${meal.strMeasure7}</li>` : ''}
+          ${meal.strIngredient8 ? `<li>${meal.strIngredient8} - ${meal.strMeasure8}</li>` : ''}
+          ${meal.strIngredient9 ? `<li>${meal.strIngredient9} - ${meal.strMeasure9}</li>` : ''}
+          ${meal.strIngredient10 ? `<li>${meal.strIngredient10} - ${meal.strMeasure10}</li>` : ''}
+        </ul>
         <form id="comment-form">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required><br><br>
@@ -74,6 +88,7 @@ window.openPopup = async function openPopup(id) {
     const username = document.getElementById('username').value;
     const comment = document.getElementById('comment').value;
     const data = { item_id: id, username, comment };
+
     const response = await fetch(
       'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments',
       {
