@@ -7,7 +7,7 @@ const main = document.querySelector('main');
 let numberItem = 0;
 const numtag = document.querySelector('#display');
 
-function thinker(Arry, item) {
+const thinker = (Arry, item) => {
   let ret = '';
   Arry.forEach((element) => {
     if (element.item_id === item) {
@@ -15,7 +15,7 @@ function thinker(Arry, item) {
     }
   });
   return ret;
-}
+};
 
 const sendi = (keys) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OIXK64DiFrG4uF3oMK7b/likes', {
@@ -31,7 +31,7 @@ const sendi = (keys) => {
   setTimeout(() => { window.location.reload(); }, 2000);
 };
 
-function complete(f, likes) {
+const complete = (f, likes) => {
   const ligne = document.createElement('div');
   ligne.classList.add('row');
   main.appendChild(ligne);
@@ -60,7 +60,7 @@ function complete(f, likes) {
   }
   numberItem = compteur(liker);
   numtag.textContent = `List of items : ${numberItem}`;
-}
+};
 
 async function received() {
   const requestUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood';
