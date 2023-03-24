@@ -59,6 +59,9 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://drive.google.com/file/d/1RkBw3IJuzYPwKLIbI_4EslW3p2PBb8KZ/view?usp=sharing)
 
 <!-- GETTING STARTED -->
 
@@ -83,7 +86,7 @@ Clone this repository to your desired folder:
 
 - Choose a directory
 - Open a Terminal
-- write: git clone https://github.com/ezraermy/ezra_portfolio/edit/portfolio_mobile_projects
+- write: git clone git@github.com:francksefu/franck-ezra-capstone.git
 - get into to directory "portfolio_mobile_mainpage"
 - write: npm install
 
