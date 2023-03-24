@@ -136,9 +136,14 @@ button {
 }
 
 .btn-danger {
+
   line-height: 12px;
   width: 24px;
   font-size: 16px;
+  background-color: #dc3545;
+  line-height: 12px;
+  width: 18px;
+  font-size: 8pt;
   margin-top: 5px;
   margin-right: 10px;
   padding-left: 7px;

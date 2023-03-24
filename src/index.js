@@ -40,12 +40,13 @@ window.openPopup = async function openPopup(id) {
   const mealDetails = await response.json();
   const meal = mealDetails.meals[0];
 
+
   const response2 = await fetch(
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NlNM9j8v13hokI4u8SYL/comments?item_id=${id}`,
   );
 
   const comments = await response2.json();
-
+  
   const popupHTML = `
     <div class="popup">
       <div class="popup-content">
@@ -76,6 +77,9 @@ window.openPopup = async function openPopup(id) {
         <div id="comment-section"></div>
         <button type="button" class="btn btn-danger pull-right" pull-left" onclick="closePopup()">&times;</button>
         <hr>
+        <h3 id="comment-title">Comments: (0)</h3>
+        <div id="comment-section"></div>
+        <button class="btn btn-danger" onclick="closePopup()">&times;</button>
       </div>
     </div>
   `;
