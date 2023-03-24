@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>ToDo List</b></h3>
+  <h3><b>Module2 Capstone Javascript</b></h3>
 
 </div>
 
@@ -30,10 +30,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [ToDo List] <a name="about-project"></a>
+# 📖 [FE-Restaurant] <a name="about-project"></a>
 
-**[Todo List]** Aimed at creating todo list web application. A user can apply CRUD functionality i.e, add a task, read, update and delete an already added task. 
-
+**[FE-Restaurant]** This website is where you can discover the delicious world of our cuisine. Our restaurant offers a unique dining experience that combines traditional flavors with modern twists.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -44,6 +43,8 @@
     <li><a href="https://html.com/">html</a></li>
     <li><a href="https://www.w3schools.com/css/">css</a></li>
     <li><a href="https://www.javascripttutorial.net/">javascript</a></li>
+    <li><a href="https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/">User API</a></li>
+    <li><a href="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood">Meal API</a></li>
   </ul>
 </details>
 
@@ -51,8 +52,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Home_page]**
-- **[CRUD_Functionality]**
+- **[Single_page]**
+- **[Header]**
+- **[Footer]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,9 +120,15 @@ To run the project, execute the following command:
 
 👤 **Ezra Yehuwalashet**
 
-- GitHub: [@ezraermy](https://github.com/)
-- Twitter: [@ezraermy](https://twitter.com/)
-- LinkedIn: [Ezra Yehuwalashet](https://linkedin.com/)
+- GitHub: [@ezraermy](https://github.com/ezraermy)
+- Twitter: [@ezraermy](https://twitter.com/ezraermy)
+- LinkedIn: [Ezra Yehuwalashet](https://www.linkedin.com/in/ezra-yehuwalashet/)
+
+👤 **Franck Kalunga**
+
+- GitHub: [francksefu](https://github.com/francksefu)
+- Twitter: [francksefu](https://twitter.com/franck_sefu)
+- LinkedIn: [francksefu](https://www.linkedin.com/in/franck-sefu-884705254/) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,7 +136,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Main_Page]**
+- [ ] **[Single_Page]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +162,9 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank  Microverse for this opportunity to learn and W3Schools for the information shared in their site.
+We would like to thank  Microverse for this opportunity to learn and W3Schools and MDN for the information shared in their site.
+
+We're also thankful for Meal DB for letting us use the API for free of charge.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
