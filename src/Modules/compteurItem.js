@@ -1,4 +1,3 @@
-export function compteur(img) {
-  
-  return ''+ img.length
+export default function compteur(img) {
+  return img.length;
 }

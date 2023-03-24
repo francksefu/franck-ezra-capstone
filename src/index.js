@@ -1,5 +1,5 @@
 import './style.css';
-import { compteur } from './Modules/compteurItem';
+import compteur from './Modules/compteurItem.js';
 
 const main = document.querySelector('main');
 let numberItem = 0;
@@ -50,7 +50,6 @@ function complete(f, likes) {
     `;
   }
   const liker = document.querySelectorAll('span');
-  
   for (let i = 0; i < liker.length; i += 1) {
     liker[i].addEventListener('click', () => {
       liker[i].classList.add('text-success');
@@ -58,7 +57,7 @@ function complete(f, likes) {
     });
   }
   numberItem = compteur(liker);
-  numtag.textContent = 'List of items : '+numberItem;
+  numtag.textContent = `List of items : ${numberItem}`;
 }
 
 async function received() {
