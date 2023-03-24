@@ -1,5 +1,7 @@
 import './style.css';
 
+import { openPopup, closePopup } from './Modules/popUp.js';
+
 const main = document.querySelector('main');
 
 function thinker(Arry, item) {
@@ -90,6 +92,10 @@ window.closePopup = function closePopup() {
   popup.parentNode.removeChild(popup);
 };
 
-window.addEventListener('load', () => {
-  received();
-});
+async function display() {
+  await received();
+  window.openPopup = openPopup;
+  window.closePopup = closePopup;
+}
+
+display();

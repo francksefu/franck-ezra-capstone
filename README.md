@@ -3,7 +3,7 @@
 <div align="center">
   <br/>
 
-  <h3><b>Leaderboard</b></h3>
+  <h3><b>ToDo List</b></h3>
 
 </div>
 
@@ -30,9 +30,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Leaderboard] <a name="about-project"></a>
+# 📖 [ToDo List] <a name="about-project"></a>
 
-**[Leaderboard]** Aimed at creating a website that displays scores submitted by different players. It also allows you to submit your score. All data is preserved into the external Leaderboard API service
+**[Todo List]** Aimed at creating todo list web application. A user can apply CRUD functionality i.e, add a task, read, update and delete an already added task. 
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -43,7 +44,6 @@
     <li><a href="https://html.com/">html</a></li>
     <li><a href="https://www.w3schools.com/css/">css</a></li>
     <li><a href="https://www.javascripttutorial.net/">javascript</a></li>
-    <li><a href="https://us-central1-js-capstone-backend.cloudfunctions.net/api/">API</a></li>
   </ul>
 </details>
 
@@ -51,9 +51,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Single_page]**
-- **[Display_Scores]**
-- **[Insert_Score]**
+- **[Home_page]**
+- **[CRUD_Functionality]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +128,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Single_Page]**
+- [ ] **[Main_Page]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
