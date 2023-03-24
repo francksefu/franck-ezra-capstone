@@ -2,7 +2,19 @@ import './style.css';
 
 const main = document.querySelector('main');
 
-function complete(f) {
+function thinker(Arry, item) {
+  let ret = 0;
+  Arry.forEach((element) => {
+    if (element.item_id === item) {
+      ret = element.likes;
+    } else {
+      ret = 0;
+    }
+  });
+  return ret;
+}
+
+function complete(f, likes) {
   const ligne = document.createElement('div');
   ligne.classList.add('row');
   main.appendChild(ligne);
@@ -15,7 +27,7 @@ function complete(f) {
             <h5 class="card-title">${f[i].strMeal}</h5>
             <p class="card-text"><span class="material-symbols-outlined">
               favorite
-            </span><br> <span class="likes"> 5 likes </span></p>
+            </span><br> <span class="likes"> ${thinker(likes, f[i].strMeal)} likes </span></p>
             <a href="#" class="btn btn-success" onclick="openPopup('${f[i].idMeal}')">Comment</a>
           </div>
         </div>
@@ -30,7 +42,18 @@ async function received() {
   const response = await fetch(request);
   const mealsNameTxt = await response.json();
   const data = mealsNameTxt.meals.slice(0, 6);
-  complete(data);
+
+  /**
+   * Display likes
+   */
+
+  const requestUrlL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OIXK64DiFrG4uF3oMK7b/likes';
+  const requestL = new Request(requestUrlL);
+  const responseL = await fetch(requestL);
+  const scoreNameTxtL = await responseL.text();
+  const scoreNameL = JSON.parse(scoreNameTxtL);
+
+  complete(data, scoreNameL);
 }
 
 window.openPopup = async function openPopup(id) {
