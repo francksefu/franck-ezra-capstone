@@ -1,8 +1,11 @@
 import './style.css';
+import compteur from './Modules/compteurItem.js';
 
 import { openPopup, closePopup } from './Modules/popUp.js';
 
 const main = document.querySelector('main');
+let numberItem = 0;
+const numtag = document.querySelector('#display');
 
 function thinker(Arry, item) {
   let ret = '';
@@ -55,6 +58,8 @@ function complete(f, likes) {
       sendi(liker[i].id);
     });
   }
+  numberItem = compteur(liker);
+  numtag.textContent = `List of items : ${numberItem}`;
 }
 
 async function received() {
