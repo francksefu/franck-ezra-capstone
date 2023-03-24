@@ -5,16 +5,28 @@ import { openPopup, closePopup } from './Modules/popUp.js';
 const main = document.querySelector('main');
 
 function thinker(Arry, item) {
-  let ret = 0;
+  let ret = '';
   Arry.forEach((element) => {
     if (element.item_id === item) {
       ret = element.likes;
-    } else {
-      ret = 0;
     }
   });
   return ret;
 }
+
+const sendi = (keys) => {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OIXK64DiFrG4uF3oMK7b/likes', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: keys,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json());
+  setTimeout(() => { window.location.reload(); }, 2000);
+};
 
 function complete(f, likes) {
   const ligne = document.createElement('div');
@@ -27,14 +39,21 @@ function complete(f, likes) {
           <img src="${f[i].strMealThumb}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${f[i].strMeal}</h5>
-            <p class="card-text"><span class="material-symbols-outlined">
+            <p class="card-text"><span id="${f[i].strMeal}" class="material-symbols-outlined">
               favorite
-            </span><br> <span class="likes"> ${thinker(likes, f[i].strMeal)} likes </span></p>
+            </span><br>  ${thinker(likes, f[i].strMeal)} likes </p>
             <a href="#" class="btn btn-success" onclick="openPopup('${f[i].idMeal}')">Comment</a>
           </div>
         </div>
       </div>
     `;
+  }
+  const liker = document.querySelectorAll('span');
+  for (let i = 0; i < liker.length; i += 1) {
+    liker[i].addEventListener('click', () => {
+      liker[i].classList.add('text-success');
+      sendi(liker[i].id);
+    });
   }
 }
 
@@ -54,7 +73,6 @@ async function received() {
   const responseL = await fetch(requestL);
   const scoreNameTxtL = await responseL.text();
   const scoreNameL = JSON.parse(scoreNameTxtL);
-
   complete(data, scoreNameL);
 }
 
