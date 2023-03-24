@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import compteur from './compteurItem.js';
+import compteur from '../compteurItem.js';
 
 test('add something', () => {
   for (let i = 0; i < 6; i += 1) {
