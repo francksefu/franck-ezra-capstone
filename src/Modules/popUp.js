@@ -64,6 +64,8 @@ export const openPopup = async (id) => {
         body: JSON.stringify(data),
       },
     );
+    setTimeout(() => { window.location.reload(); }, 2000);
+
     const result = await response.json();
 
     const commentSection = document.getElementById('comment-section');
@@ -75,7 +77,6 @@ export const openPopup = async (id) => {
       </div>
     `;
     commentSection.innerHTML += commentHTML;
-    commentForm.reset();
   });
 
   const commentSection = document.getElementById('comment-section');
